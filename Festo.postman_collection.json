@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "7b8408d8-5620-4111-b288-ff9e714f3d62",
+		"name": "Festo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send paswd",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bee2d29b-3b15-43cc-a26f-8e840976cb34",
+						"exec": [
+							"var password     = make(3, 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789');\r",
+							"\r",
+							"// pm.collectionVariables.set(\"variable_key\", \"variable_value\");\r",
+							"pm.environment.set(\"password\", password);\r",
+							"pm.environment.set(\"urlHash\", \"https://coding-challenge.festo.com/stage/4/solve\");\r",
+							"\r",
+							"\r",
+							"function make(length, characters) {\r",
+							"   var result           = '';\r",
+							"\r",
+							"   var charactersLength = characters.length;\r",
+							"   for ( var i = 0; i < length; i++ ) {\r",
+							"      result += characters.charAt(Math.floor(Math.random() * charactersLength));\r",
+							"   }\r",
+							"   return result;\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1450622f-88f4-4507-9cd3-68f0cd90b8f9",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"ACCESS DENIED\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Origin",
+						"value": "https://coding-challenge.festo.com"
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Referer",
+						"value": "https://coding-challenge.festo.com/stage/4"
+					},
+					{
+						"key": "Cookie",
+						"value": "AWSALB=eWDyzldt9UxDRwD02bfrhc6Y1+k+CtCvaUnIj/RXqZx1X2mSEJkdo1H8ciCHgPxosISmKoSm9c4cD3y5mvPuk6wr3wbcjC4qlMlT28UHm14sP/aFO2t891y2+bI1; AWSALBCORS=eWDyzldt9UxDRwD02bfrhc6Y1+k+CtCvaUnIj/RXqZx1X2mSEJkdo1H8ciCHgPxosISmKoSm9c4cD3y5mvPuk6wr3wbcjC4qlMlT28UHm14sP/aFO2t891y2+bI1; connect.sid=s%3AeaHxTvditTcbvNROL_epiPKAXO70v-1T.SFJGm6YEawoVTnywaxSL7r8UwibJqKTtSuzJ1y4E%2FcM; NETMIND_PERMSID=2af001cfaa-6595392baa-81c5a221aa-78196417aa-1607639082; NETMIND_SID=2af001cfaa-6595392baa-81c5a221aa-78196417aa-1607639083; ckns_policy=10000"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "TE",
+						"value": "Trailers"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlHash}}",
+					"host": [
+						"{{urlHash}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

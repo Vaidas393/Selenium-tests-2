@@ -1,15 +1,13 @@
 package pageobject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utils.Utils;
-import pageobject.*;
 
 
 public class Hash extends PageObject {
-	
+
 	public Utils util = new Utils();
 //	variables inside decode site
     @FindBy(xpath = "/html/body/div[2]/div[2]/div[2]/a")
@@ -21,7 +19,7 @@ public class Hash extends PageObject {
 	@FindBy(id = "confirm-password")
     private WebElement confirm;
 
-//	variables inside hash sitezzz
+//	variables inside hash site
 	@FindBy(id = "string")
     private WebElement hashInput;
 
@@ -54,31 +52,52 @@ public class Hash extends PageObject {
 	  this.nextBtn.click();
     }
 
+//      			Hash entering
+
+//      public void fourth() throws InterruptedException{
+//    	  Utils utils = new Utils();
+//    	  for (int i = 0; i < 10; i++) {
+//    		  driver.get("https://www.md5hashgenerator.com/");
+//    		  this.hashInput.click();
+//    		  this.hashInput.sendKeys(utils.randomPass());
+//    		  Thread.sleep(500);
+//    		  this.generate.click();
+//    		  Thread.sleep(500);
+//    		  String generatedHashes = this.generatedHash.getText();
+//    		  driver.get("https://coding-challenge.festo.com/stage/4)");
+//    		  Thread.sleep(500);
+//    	      this.input.click();
+//    	      Thread.sleep(500);
+//    	      this.input.sendKeys(generatedHashes);
+//    		  Thread.sleep(500);
+//    		  this.confirm.click();
+//    		  Thread.sleep(500);
+//    		  this.nextBtn.click();
+//    		  }
+//      }
+
+
+//      			Password enter
+
       public void fourth() throws InterruptedException{
     	  Utils utils = new Utils();
-    	  for (int i = 0; i < 1000; i++) {
-    		  driver.get("https://www.md5hashgenerator.com/");
-    		  this.hashInput.click();
-    		  this.hashInput.sendKeys(utils.randomPass());
-    		  Thread.sleep(500);
-    		  this.generate.click();
-    		  Thread.sleep(500);
-    		  String generatedHashes = this.generatedHash.getText();
-    		  driver.get("https://coding-challenge.festo.com/stage/4)");
-    		  Thread.sleep(500);
+    	 	  driver.get("https://coding-challenge.festo.com/stage/4)");
+    		  for (int i = 0; i < 10; i++) {
     	      this.input.click();
     	      Thread.sleep(500);
-    	      this.input.sendKeys(generatedHashes);
-    		  Thread.sleep(500);
+    	      this.input.sendKeys(utils.randomPass());
+    	      Thread.sleep(500);
     		  this.confirm.click();
     		  Thread.sleep(500);
     		  this.nextBtn.click();
+    		  Thread.sleep(500);
     		  }
       }
 
-    public WebElement getNextBtn() {
-    	return nextBtn;
-    }
+
+	    public WebElement getNextBtn() {
+	    	return nextBtn;
+	    }
 
 		public WebElement getInputField() {
 			return input;
