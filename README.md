@@ -17,10 +17,10 @@ I prefer Eclipse IDE so example is done using Eclipse
 - Tutorial: https://www.youtube.com/watch?v=yAzLc0xz0l4
 
 ## Usage
-Download folder or clone using GIT
-Import Maven project in Eclipse
-Run ```testng.xml``` file to start test. (Run As / TestNG Suite)
-Tutorial: https://vimeo.com/489454435
+/ Download folder or clone using GIT
+/ Import Maven project in Eclipse
+/ Run ```testng.xml``` file to start test. (Run As / TestNG Suite)
+/ Tutorial: https://vimeo.com/489454435
 
 ## Additional comments:
 Test will do first three stages and than will attempt to solve fourth stage
@@ -40,7 +40,7 @@ For brute forcing I prefer API testing tools, some examples would be:
 - Jmeter
 
 ## Short intro to brute force using Postman:
-Since Postman is my favorite tool for API testing I will add additional Postman file
+- Since Postman is my favorite tool for API testing I will add additional Postman file
 - Festo.postman_collection.json
 Run Postman
 Import json file “Festo.postman_collection.json”
